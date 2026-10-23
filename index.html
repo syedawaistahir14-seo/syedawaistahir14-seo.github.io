@@ -161,6 +161,39 @@
   .strip p{text-align:center;color:var(--ink-3);font-size:.85rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
   .strip .names{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 40px;font-family:"Outfit",sans-serif;font-weight:700;font-size:1.12rem;color:var(--ink-2)}
 
+  /* ---------- experience badge ---------- */
+  .exp-badge{
+    display:inline-flex;align-items:center;gap:7px;margin-top:11px;
+    background:var(--accent-soft);border:1px solid rgba(37,192,138,.5);color:var(--accent);
+    border-radius:999px;padding:5px 14px;font-size:.82rem;font-weight:800;letter-spacing:.02em;
+  }
+
+  /* ---------- stats ---------- */
+  .stats{padding:54px 0;border-bottom:1px solid var(--line)}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  @media (max-width:820px){ .stats-grid{grid-template-columns:repeat(2,1fr)} }
+  .stat{text-align:center}
+  .stat .num{font-family:"Outfit",sans-serif;font-weight:800;font-size:clamp(1.9rem,4.2vw,2.8rem);color:var(--accent);line-height:1.05;display:block}
+  .stat .lbl{color:var(--ink-2);font-weight:700;font-size:.95rem;margin-top:7px;display:block}
+
+  /* ---------- industries ---------- */
+  .ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media (max-width:920px){ .ind-grid{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:620px){ .ind-grid{grid-template-columns:1fr} }
+  .ind{
+    display:flex;gap:16px;align-items:flex-start;
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;transition:border-color .2s ease;
+  }
+  .ind:hover{border-color:rgba(37,192,138,.55)}
+  .ind .ic{
+    width:46px;height:46px;border-radius:13px;flex:none;
+    background:var(--accent-soft);color:var(--accent);
+    display:grid;place-items:center;
+  }
+  .ind h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
+  .ind p{color:var(--ink-2);font-size:.93rem}
+
   /* ---------- cards / services ---------- */
   .grid{display:grid;gap:20px}
   .grid-3{grid-template-columns:repeat(3,1fr)}
@@ -295,6 +328,7 @@
     </a>
     <nav class="nav-links" aria-label="Main">
       <a class="nl" href="#services">Services</a>
+      <a class="nl" href="#industries">Industries</a>
       <a class="nl" href="#why">Why Me</a>
       <a class="nl" href="#process">Process</a>
       <a class="nl" href="#about">About</a>
@@ -336,6 +370,7 @@
           <div>
             <h3>Syed Awais Tahir</h3>
             <p class="role">SEO Expert — Technical, AEO &amp; GEO</p>
+            <span class="exp-badge">2 Years SEO Experience</span>
           </div>
         </div>
         <span class="status"><span class="dot"></span> Open to projects</span>
@@ -363,6 +398,16 @@
     </div>
   </section>
 
+  <!-- ============ STATS ============ -->
+  <div class="stats">
+    <div class="wrap stats-grid">
+      <div class="stat rv"><span class="num"><span data-count="2">2</span> Years</span><span class="lbl">SEO Experience</span></div>
+      <div class="stat rv"><span class="num"><span data-count="7">7</span></span><span class="lbl">Specialised SEO Services</span></div>
+      <div class="stat rv"><span class="num"><span data-count="100">100</span>%</span><span class="lbl">White-Hat Methods</span></div>
+      <div class="stat rv"><span class="num">Worldwide</span><span class="lbl">USA, UK &amp; Remote Clients</span></div>
+    </div>
+  </div>
+
   <!-- ============ PLATFORMS STRIP ============ -->
   <div class="strip">
     <div class="wrap">
@@ -377,6 +422,61 @@
       </div>
     </div>
   </div>
+
+  <!-- ============ INDUSTRIES ============ -->
+  <section id="industries">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="kicker">Industries I Help</span>
+        <h2>Built for Businesses <em>That Win Customers Through Search</em></h2>
+        <p>Whether you win customers locally, sell online or publish content — if your buyers start on Google or in an AI answer, I can help you get found first.</p>
+      </div>
+      <div class="ind-grid">
+        <div class="ind rv">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.79a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <h3>Local Service Businesses</h3>
+            <p>Plumbers, dentists, contractors, clinics and other local providers who win work from "near me" searches and the map pack.</p>
+          </div>
+        </div>
+        <div class="ind rv">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+          <div>
+            <h3>Real Estate</h3>
+            <p>Agencies and agents who need to be found first when buyers and sellers search for property in their area.</p>
+          </div>
+        </div>
+        <div class="ind rv">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+          <div>
+            <h3>WordPress &amp; E-commerce Owners</h3>
+            <p>Stores and WordPress sites that need product, category and content pages ranking higher — and converting better.</p>
+          </div>
+        </div>
+        <div class="ind rv">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div>
+            <h3>Small Agencies</h3>
+            <p>White-label SEO support for agencies that want expert delivery for their clients without hiring in-house.</p>
+          </div>
+        </div>
+        <div class="ind rv">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
+          <div>
+            <h3>SaaS &amp; Startups</h3>
+            <p>Early-stage and growing software brands building organic visibility — and AI citations — from the ground up.</p>
+          </div>
+        </div>
+        <div class="ind rv">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0V9"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8z"/></svg></div>
+          <div>
+            <h3>Publishing &amp; Media</h3>
+            <p>Blogs and content sites that live on search traffic and need topical authority that compounds over time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ============ SERVICES ============ -->
   <section id="services">
@@ -530,6 +630,49 @@
     </div>
   </section>
 
+  <!-- ============ WHAT YOU GET ============ -->
+  <section id="deliverables">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="kicker">What You Get</span>
+        <h2>Concrete Deliverables, <em>Every Single Month</em></h2>
+        <p>When you hire me, this is exactly what lands on your side — real work products you can see, check and measure.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card rv">
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></div>
+          <h3>Free SEO Audit First</h3>
+          <p>Every engagement starts with a free, full audit — technical health, current rankings and AI visibility — so every decision starts from facts, not opinions.</p>
+        </article>
+        <article class="card rv">
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
+          <h3>Keyword &amp; Competitor Research</h3>
+          <p>A mapped keyword plan built on real search intent, plus a clear view of what your competitors rank for — and exactly where the gaps you can win are.</p>
+        </article>
+        <article class="card rv">
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg></div>
+          <h3>Monthly Action Plan</h3>
+          <p>A prioritised monthly roadmap: what gets fixed, optimised and published — and why it matters. No guesswork, no filler tasks, no surprises.</p>
+        </article>
+        <article class="card rv">
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <h3>On-Page + Technical Fixes</h3>
+          <p>Hands-on implementation, not just recommendations: technical issues resolved, pages optimised, schema added — done properly, page by page.</p>
+        </article>
+        <article class="card rv">
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+          <h3>Authority Link Building</h3>
+          <p>White-hat guest posts and brand mentions on real, relevant websites with genuine traffic — the authority that moves both rankings and AI citations.</p>
+        </article>
+        <article class="card rv">
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div>
+          <h3>Transparent Monthly Reporting</h3>
+          <p>A clear monthly report on work done, links built and keyword movement — verified in Search Console and explained in plain English.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ SKILLS & TOOLS ============ -->
   <section id="skills" class="skills">
     <div class="wrap">
@@ -588,7 +731,7 @@
       </div>
       <div class="about-grid">
         <div class="about-copy rv">
-          <p>I'm <b>Syed Awais Tahir</b>, an SEO expert working with businesses in the USA, UK and worldwide. My speciality is helping brands get <b>found, cited and recommended</b> — not just in Google's results, but in the AI answers your customers now read first.</p>
+          <p>I'm <b>Syed Awais Tahir</b>, an SEO expert with <b>2 years of hands-on experience</b>, working with businesses in the USA, UK and worldwide. My speciality is helping brands get <b>found, cited and recommended</b> — not just in Google's results, but in the AI answers your customers now read first.</p>
           <p>I handle the full search picture myself: technical audits and fixes, keyword and intent research, on-page optimisation, WordPress SEO, white-hat authority building, and AEO/GEO strategies that put your brand inside AI Overviews, ChatGPT and Gemini responses.</p>
           <p>No account managers, no hand-offs, no black-hat shortcuts. You get a clear plan, honest reporting, and an expert who treats your growth like his own.</p>
           <ul class="checks">
@@ -605,6 +748,7 @@
           <div class="focus-box">
             <h3>At a Glance</h3>
             <div class="row"><span>Role</span><b>SEO Expert</b></div>
+            <div class="row"><span>Experience</span><b>2 Years</b></div>
             <div class="row"><span>Specialities</span><b>Technical · AEO · GEO</b></div>
             <div class="row"><span>Also covers</span><b>On-Page · Off-Page · Local</b></div>
             <div class="row"><span>Platforms</span><b>WordPress &amp; more</b></div>
@@ -691,6 +835,32 @@
       });
     }, { threshold: 0.12 });
     els.forEach(function (el) { io.observe(el); });
+
+    /* stat counters — count up when the stats strip scrolls into view */
+    var counters = document.querySelectorAll('[data-count]');
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function runCount(el) {
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      if (reduceMotion || !('requestAnimationFrame' in window)) { el.textContent = target; return; }
+      var start = null, dur = 1100;
+      function tick(ts) {
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / dur, 1);
+        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+    if ('IntersectionObserver' in window && !reduceMotion) {
+      var cio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { runCount(e.target); cio.unobserve(e.target); }
+        });
+      }, { threshold: 0.4 });
+      counters.forEach(function (el) { cio.observe(el); });
+    } else {
+      counters.forEach(runCount);
+    }
   })();
 </script>
 </body>
