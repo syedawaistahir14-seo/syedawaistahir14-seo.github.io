@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ComfortPro Heating & Air — AC & Heating Services in Dallas, TX</title>
+<meta name="description" content="ComfortPro Heating & Air provides AC repair, heating services and HVAC installation in Dallas, TX. 24/7 emergency service, upfront pricing. Call (555) 019-3344.">
+<style>
+:root{
+  --navy:#0f2a43; --navy-dark:#0a1e31; --orange:#f97316; --orange-dark:#d95f06;
+  --ink:#1d2a36; --muted:#5c6d7a; --bg:#f3f6f9; --card:#ffffff; --line:#dde6ec; --radius:14px;
+  --shadow:0 10px 30px rgba(15,42,67,.09);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+a{text-decoration:none;color:inherit}
+.container{max-width:1140px;margin:0 auto;padding:0 20px}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:600;font-size:15px;transition:.2s;border:2px solid transparent;cursor:pointer}
+.btn-primary{background:var(--orange);color:#fff}
+.btn-primary:hover{background:var(--orange-dark)}
+.btn-outline{border-color:#fff;color:#fff;background:transparent}
+.btn-outline:hover{background:#fff;color:var(--navy)}
+.btn-white{background:#fff;color:var(--navy)}
+.btn-white:hover{background:var(--bg)}
+.topbar{background:var(--navy-dark);color:#c9d8e4;font-size:13.5px}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;padding-top:8px;padding-bottom:8px;flex-wrap:wrap;gap:6px}
+.topbar a{color:#fff;font-weight:600}
+.topbar .emergency{color:#ffb37a;font-weight:700}
+header{position:sticky;top:0;background:#fff;z-index:50;transition:box-shadow .2s}
+header.scrolled{box-shadow:0 4px 18px rgba(15,42,67,.13)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.logo{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:800;color:var(--navy)}
+.logo span{color:var(--orange)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-weight:600;font-size:15px;color:var(--ink)}
+.nav-links a:hover{color:var(--orange-dark)}
+.nav-cta{display:flex;gap:12px;align-items:center}
+.menu-btn{display:none;background:none;border:0;cursor:pointer;padding:6px}
+.hero{background:linear-gradient(120deg,var(--navy-dark) 0%,var(--navy) 60%,#1d4e6b 100%);color:#fff;padding:84px 0 76px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.hero h1{font-size:44px;line-height:1.15;margin-bottom:18px}
+.hero h1 em{font-style:normal;color:#ffb37a}
+.hero p{font-size:18px;color:#dcebf5;max-width:520px;margin-bottom:28px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+.hero-points{display:flex;gap:22px;flex-wrap:wrap;font-size:14.5px;font-weight:600}
+.hero-points div{display:flex;align-items:center;gap:8px}
+.hero-card{background:#fff;color:var(--ink);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+.hero-card h3{color:var(--navy);font-size:19px;margin-bottom:6px}
+.hero-card p{color:var(--muted);font-size:14.5px;margin-bottom:16px}
+.hero-card ul{list-style:none;font-size:15px}
+.hero-card li{padding:9px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px}
+.hero-card li:last-child{border-bottom:0}
+.hero-card li b{color:var(--orange-dark);text-align:right}
+section{padding:74px 0}
+.section-head{text-align:center;max-width:640px;margin:0 auto 44px}
+.section-head .kicker{color:var(--orange-dark);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;font-size:13px;margin-bottom:8px}
+.section-head h2{font-size:33px;color:var(--navy);margin-bottom:10px}
+.section-head p{color:var(--muted)}
+.alt{background:var(--bg)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.service-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:.2s}
+.service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--orange)}
+.service-icon{width:54px;height:54px;border-radius:14px;background:#fdeee0;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.service-card h3{font-size:18.5px;color:var(--navy);margin-bottom:8px}
+.service-card p{color:var(--muted);font-size:15px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.split h2{font-size:31px;color:var(--navy);margin-bottom:14px}
+.split p{color:var(--muted);margin-bottom:14px}
+.check-list{list-style:none;margin-top:8px}
+.check-list li{display:flex;gap:12px;padding:8px 0;font-size:15.5px;align-items:flex-start}
+.check-list svg{flex:none;margin-top:3px}
+.plan-panel{background:linear-gradient(150deg,var(--navy) 0%,#1d4e6b 100%);border-radius:var(--radius);color:#fff;padding:36px}
+.plan-panel h3{font-size:22px;margin-bottom:8px}
+.plan-panel .price{font-size:34px;font-weight:800;color:#ffb37a;margin-bottom:6px}
+.plan-panel .price small{font-size:15px;color:#dcebf5;font-weight:600}
+.plan-panel p{color:#d5e5ef;margin-bottom:16px;font-size:15px}
+.plan-panel ul{list-style:none;font-size:15px}
+.plan-panel li{padding:7px 0;display:flex;gap:10px;align-items:flex-start}
+.areas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.areas span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 20px;font-weight:600;color:var(--navy);font-size:14.5px}
+.faq{max-width:780px;margin:0 auto}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden}
+.faq-q{width:100%;text-align:left;background:none;border:0;padding:18px 22px;font-size:16px;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-a p{padding:0 22px 18px;color:var(--muted);font-size:15px}
+.faq-item.open .faq-a{max-height:240px}
+.faq-item .arrow{transition:transform .3s}
+.faq-item.open .arrow{transform:rotate(180deg)}
+.quote{background:linear-gradient(120deg,var(--navy-dark),var(--navy));color:#fff}
+.quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.quote h2{font-size:31px;margin-bottom:14px}
+.quote p{color:#cfdfec;margin-bottom:18px}
+.quote .contact-line{display:flex;gap:12px;align-items:center;padding:9px 0;font-size:16px}
+form{background:#fff;border-radius:var(--radius);padding:30px;color:var(--ink)}
+form h3{color:var(--navy);margin-bottom:16px;font-size:20px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:13.5px;font-weight:600;margin-bottom:5px;color:var(--navy)}
+.field input,.field select,.field textarea{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:9px;font-size:15px;font-family:inherit}
+.field textarea{resize:vertical;min-height:74px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-success{display:none;background:#e7f7ee;border:1px solid #a9dfc0;color:#146c39;border-radius:9px;padding:13px 16px;font-size:14.5px;margin-top:14px}
+footer{background:var(--navy-dark);color:#b9cbda;padding:56px 0 26px;font-size:14.5px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px;margin-bottom:36px}
+footer h4{color:#fff;font-size:16px;margin-bottom:14px}
+footer ul{list-style:none}
+footer li{padding:4px 0}
+footer a:hover{color:#fff}
+.footer-logo{font-size:21px;font-weight:800;color:#fff;margin-bottom:10px}
+.footer-logo span{color:#ffb37a}
+.copyright{border-top:1px solid rgba(255,255,255,.13);padding-top:20px;text-align:center;font-size:13px;color:#8fa8bc}
+@media(max-width:900px){
+  .hero-grid,.split,.quote-grid{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:34px}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:18px 20px;gap:14px;box-shadow:0 14px 24px rgba(15,42,67,.13);align-items:flex-start}
+  .nav-links.open{display:flex}
+  .menu-btn{display:block}
+  .nav-cta .btn{display:none}
+}
+@media(max-width:560px){.services-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <div class="emergency">24/7 Emergency Service — No Overtime Fees</div>
+    <div>Serving Dallas–Fort Worth &nbsp;·&nbsp; <a href="tel:+15550193344">(555) 019-3344</a></div>
+  </div>
+</div>
+
+<header id="header">
+  <div class="container nav">
+    <a class="logo" href="#top" aria-label="ComfortPro Heating and Air home">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M12 2.5 3 10v11a1 1 0 0 0 1 1h5v-6.5h6V22h5a1 1 0 0 0 1-1V10L12 2.5Z" fill="#0f2a43"/><path d="M12 7.2a3.4 3.4 0 1 1 0 6.8 3.4 3.4 0 0 1 0-6.8Z" fill="#f97316"/></svg>
+      Comfort<span>Pro</span>&nbsp;Heating &amp; Air
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#about">About Us</a>
+      <a href="#areas">Service Area</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="#quote">Get a Free Quote</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0f2a43" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h1>Fast, Honest AC &amp; Heating Service in <em>Dallas</em></h1>
+      <p>Same-day repairs, upfront flat-rate pricing and licensed technicians who explain every option before any work begins. When your comfort is on the line, ComfortPro answers — day or night.</p>
+      <div class="hero-actions">
+        <a class="btn btn-white" href="#quote">Request Service Online</a>
+        <a class="btn btn-outline" href="tel:+15550193344">Call (555) 019-3344</a>
+      </div>
+      <div class="hero-points">
+        <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffb37a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Licensed &amp; insured technicians</div>
+        <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffb37a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Upfront pricing — no surprises</div>
+        <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffb37a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 24/7 emergency service</div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>How We Work</h3>
+      <p>One call and we handle the rest — diagnosis first, price agreed up front, work guaranteed in writing.</p>
+      <ul>
+        <li><span>Diagnostic visit</span><b>Flat fee, waived with repair</b></li>
+        <li><span>Repairs</span><b>Price approved before we start</b></li>
+        <li><span>New systems</span><b>Free in-home estimate</b></li>
+        <li><span>Emergencies</span><b>24/7 — call (555) 019-3344</b></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Our Services</div>
+      <h2>Heating &amp; Cooling Services Done Right</h2>
+      <p>Repairs, replacements and maintenance for all major brands — residential and light commercial, across the Dallas–Fort Worth metroplex.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#d95f06" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a7 7 0 0 1 7 7c0 2.4-1.2 3.9-2.3 5.2-.9 1-1.7 2-1.7 3.8H9c0-1.8-.8-2.8-1.7-3.8C6.2 13.9 5 12.4 5 10a7 7 0 0 1 7-7Z"/><path d="M9 21h6"/></svg></div>
+        <h3>AC Repair</h3>
+        <p>Warm air, strange noises, short cycling or a system that won't start — we diagnose the real cause and fix it on the first visit whenever possible.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#d95f06" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M7 21h10M12 17v4M7 9.5h10M7 13h6"/></svg></div>
+        <h3>AC Installation</h3>
+        <p>Right-sized, energy-efficient systems matched to your home and budget, with free in-home estimates and financing options available.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#d95f06" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1 3-2 4.2-2 6.2A2.2 2.2 0 0 0 12.2 11.4c1.5-.2 2-1.6 1.8-3.4 2 1.2 3.2 3 3.2 5.2A5.2 5.2 0 0 1 12 18.4a5.2 5.2 0 0 1-5.2-5.2C6.8 8.9 10.4 6.6 12 3Z"/><path d="M9.5 21h5"/></svg></div>
+        <h3>Heating &amp; Furnace</h3>
+        <p>Furnace repair, heat pump service and full heating system replacement — plus carbon-monoxide safety checks with every heating visit.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#d95f06" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/></svg></div>
+        <h3>Maintenance Plans</h3>
+        <p>Two precision tune-ups a year, priority scheduling and member discounts on repairs — the cheapest way to avoid a breakdown in peak season.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#d95f06" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15c3-1 5 1 8 0s4-2.5 7-1M3 10c3-1 5 1 8 0s4-2.5 7-1M3 20c3-1 5 1 8 0s4-2.5 7-1"/></svg></div>
+        <h3>Indoor Air Quality</h3>
+        <p>Whole-home air purification, humidifiers, dehumidifiers and duct cleaning that help your family breathe easier all year round.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#d95f06" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2Z"/></svg></div>
+        <h3>24/7 Emergency Service</h3>
+        <p>No AC in a Texas summer is an emergency. Our on-call team answers around the clock — with no overtime fees, ever.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="alt">
+  <div class="container split">
+    <div>
+      <div class="kicker" style="color:var(--orange-dark);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;font-size:13px;margin-bottom:8px">Why ComfortPro</div>
+      <h2>Local Technicians, Straightforward Prices</h2>
+      <p>ComfortPro is a locally owned HVAC company serving Dallas–Fort Worth homeowners. We don't work on commission — our technicians are paid to fix problems, not to sell you equipment you don't need.</p>
+      <p>Every job starts with a full diagnosis and a written, flat-rate price. You approve the work before we begin, and every repair is backed by our workmanship guarantee.</p>
+      <ul class="check-list">
+        <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#d95f06" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Background-checked, uniformed local technicians</li>
+        <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#d95f06" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Written flat-rate pricing before any work starts</li>
+        <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#d95f06" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> All major brands serviced — Carrier, Trane, Lennox, Goodman &amp; more</li>
+        <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#d95f06" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Shoe covers and full clean-up on every visit</li>
+      </ul>
+    </div>
+    <div class="plan-panel">
+      <h3>Comfort Club Maintenance Plan</h3>
+      <div class="price">$19<small> / month</small></div>
+      <p>Keep your system efficient and under warranty with twice-yearly professional maintenance.</p>
+      <ul>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffb37a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Spring AC + autumn heating tune-ups</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffb37a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Priority scheduling — jump the queue</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffb37a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 15% discount on all repairs</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffb37a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> No overtime fees on emergency calls</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="areas">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Service Area</div>
+      <h2>Proudly Serving Dallas–Fort Worth</h2>
+      <p>Based in Dallas and on the road across the metroplex every day. Don't see your town? Call us — chances are we are already nearby.</p>
+    </div>
+    <div class="areas">
+      <span>Dallas</span><span>Fort Worth</span><span>Plano</span><span>Arlington</span><span>Irving</span><span>Garland</span><span>Frisco</span><span>McKinney</span><span>Richardson</span><span>Mesquite</span><span>Carrollton</span><span>Grand Prairie</span>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">FAQ</div>
+      <h2>Questions Homeowners Ask Us</h2>
+    </div>
+    <div class="faq">
+      <div class="faq-item">
+        <button class="faq-q">How fast can you come out?<span class="arrow">▾</span></button>
+        <div class="faq-a"><p>For most repairs we offer same-day appointments when you call before noon, and our emergency team is on call 24/7 for no-cooling and no-heating situations.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you charge for estimates?<span class="arrow">▾</span></button>
+        <div class="faq-a"><p>Estimates for new system installation are free. For repairs, we charge one flat diagnostic fee — and we waive it when you go ahead with the repair.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Should I repair or replace my AC?<span class="arrow">▾</span></button>
+        <div class="faq-a"><p>A good rule: if your system is over 12 years old and the repair costs more than a third of a new system, replacement usually pays for itself in lower energy bills. We will show you both options with honest numbers — the decision is always yours.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Which brands do you service?<span class="arrow">▾</span></button>
+        <div class="faq-a"><p>All major brands, including Carrier, Trane, Lennox, Goodman, Rheem, York and American Standard — for both repairs and warranty work where applicable.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you offer financing?<span class="arrow">▾</span></button>
+        <div class="faq-a"><p>Yes — flexible financing options are available on new systems and larger repairs, subject to approval. Ask our team when you book and we will walk you through the options.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quote" class="quote">
+  <div class="container quote-grid">
+    <div>
+      <h2>Request Service or a Free Quote</h2>
+      <p>Send the form and we will call you back to confirm your appointment window. For emergencies, call any time — a real person answers, 24/7.</p>
+      <div class="contact-line"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffb37a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9Z"/></svg> (555) 019-3344 — 24/7</div>
+      <div class="contact-line"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffb37a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> service@comfortprohvac.com</div>
+      <div class="contact-line"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffb37a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> 11850 Preston Road, Suite 210, Dallas, TX 75230</div>
+    </div>
+    <form id="quoteForm" novalidate>
+      <h3>Service Request</h3>
+      <div class="form-row">
+        <div class="field"><label for="fname">Full Name</label><input id="fname" type="text" placeholder="Your name" required></div>
+        <div class="field"><label for="fphone">Phone</label><input id="fphone" type="tel" placeholder="(555) 000-0000" required></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="fservice">Service Needed</label>
+          <select id="fservice">
+            <option>AC Repair</option><option>AC Installation / Replacement</option><option>Heating / Furnace</option><option>Maintenance Tune-Up</option><option>Indoor Air Quality</option><option>Emergency Service</option><option>Other</option>
+          </select></div>
+        <div class="field"><label for="fcity">City</label><input id="fcity" type="text" placeholder="e.g. Plano"></div>
+      </div>
+      <div class="field"><label for="fmsg">Tell Us the Problem (optional)</label><textarea id="fmsg" placeholder="e.g. AC blowing warm air since yesterday, unit is about 9 years old…"></textarea></div>
+      <button class="btn btn-primary" type="submit" style="width:100%">Send Request</button>
+      <div class="form-success" id="formSuccess">Thank you — your request has been received. We will call you shortly to confirm your appointment window.</div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Comfort<span>Pro</span> Heating &amp; Air</div>
+        <p>Locally owned heating and cooling company serving Dallas–Fort Worth. Honest diagnosis, flat-rate pricing and guaranteed workmanship.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#about">Why ComfortPro</a></li>
+          <li><a href="#areas">Service Area</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#quote">Get a Free Quote</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li>AC Repair &amp; Installation</li>
+          <li>Heating &amp; Furnace</li>
+          <li>Maintenance Plans</li>
+          <li>Indoor Air Quality</li>
+          <li>24/7 Emergency Service</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact &amp; Hours</h4>
+        <ul>
+          <li>11850 Preston Road, Suite 210, Dallas, TX 75230</li>
+          <li>Phone: (555) 019-3344 (24/7)</li>
+          <li>Email: service@comfortprohvac.com</li>
+          <li>Office: Mon–Sat 7:00 AM – 7:00 PM</li>
+          <li>Emergency service: 24 hours, 7 days</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">© 2026 ComfortPro Heating &amp; Air, Dallas, TX. All rights reserved. · TX HVAC License #TACLA-000000 (sample)</div>
+  </div>
+</footer>
+
+<script>
+const header=document.getElementById('header');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>10));
+const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-q').addEventListener('click',()=>{
+    const open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!open)item.classList.add('open');
+  });
+});
+document.getElementById('quoteForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=document.getElementById('fname'),phone=document.getElementById('fphone');
+  if(!name.value.trim()||!phone.value.trim()){alert('Please add your name and phone number so we can confirm your appointment.');return;}
+  document.getElementById('formSuccess').style.display='block';
+  e.target.querySelector('button[type=submit]').textContent='Request Sent ✓';
+});
+</script>
+</body>
+</html>
