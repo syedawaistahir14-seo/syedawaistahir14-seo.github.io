@@ -9,12 +9,13 @@
 :root{
   --navy:#0f2a43; --navy-dark:#0a1e31; --orange:#f97316; --orange-dark:#d95f06;
   --ink:#1d2a36; --muted:#5c6d7a; --bg:#f3f6f9; --card:#ffffff; --line:#dde6ec; --radius:14px;
-  --shadow:0 10px 30px rgba(15,42,67,.09);
+  --shadow:0 10px 30px rgba(15,42,67,.10);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;color:var(--ink);line-height:1.6;background:#fff}
 a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
 .container{max-width:1140px;margin:0 auto;padding:0 20px}
 .btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:600;font-size:15px;transition:.2s;border:2px solid transparent;cursor:pointer}
 .btn-primary{background:var(--orange);color:#fff}
@@ -32,14 +33,16 @@ header.scrolled{box-shadow:0 4px 18px rgba(15,42,67,.13)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
 .logo{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:800;color:var(--navy)}
 .logo span{color:var(--orange)}
-.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links{display:flex;gap:26px;align-items:center}
 .nav-links a{font-weight:600;font-size:15px;color:var(--ink)}
 .nav-links a:hover{color:var(--orange-dark)}
 .nav-cta{display:flex;gap:12px;align-items:center}
 .menu-btn{display:none;background:none;border:0;cursor:pointer;padding:6px}
-.hero{background:linear-gradient(120deg,var(--navy-dark) 0%,var(--navy) 60%,#1d4e6b 100%);color:#fff;padding:84px 0 76px}
+.hero{position:relative;color:#fff;padding:96px 0 88px;background:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,30,49,.94) 30%,rgba(15,42,67,.82) 65%,rgba(29,78,107,.55))}
+.hero .container{position:relative}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
-.hero h1{font-size:44px;line-height:1.15;margin-bottom:18px}
+.hero h1{font-size:45px;line-height:1.15;margin-bottom:18px}
 .hero h1 em{font-style:normal;color:#ffb37a}
 .hero p{font-size:18px;color:#dcebf5;max-width:520px;margin-bottom:28px}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
@@ -53,15 +56,16 @@ header.scrolled{box-shadow:0 4px 18px rgba(15,42,67,.13)}
 .hero-card li:last-child{border-bottom:0}
 .hero-card li b{color:var(--orange-dark);text-align:right}
 section{padding:74px 0}
-.section-head{text-align:center;max-width:640px;margin:0 auto 44px}
+.section-head{text-align:center;max-width:660px;margin:0 auto 44px}
 .section-head .kicker{color:var(--orange-dark);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;font-size:13px;margin-bottom:8px}
 .section-head h2{font-size:33px;color:var(--navy);margin-bottom:10px}
 .section-head p{color:var(--muted)}
 .alt{background:var(--bg)}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.service-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:.2s}
-.service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--orange)}
-.service-icon{width:54px;height:54px;border-radius:14px;background:#fdeee0;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.service-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.2s}
+.service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.service-card img{width:100%;height:170px;object-fit:cover}
+.service-body{padding:24px 26px 28px}
 .service-card h3{font-size:18.5px;color:var(--navy);margin-bottom:8px}
 .service-card p{color:var(--muted);font-size:15px}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
@@ -77,6 +81,27 @@ section{padding:74px 0}
 .plan-panel p{color:#d5e5ef;margin-bottom:16px;font-size:15px}
 .plan-panel ul{list-style:none;font-size:15px}
 .plan-panel li{padding:7px 0;display:flex;gap:10px;align-items:flex-start}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.step-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;text-align:center}
+.step-num{width:46px;height:46px;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+.step-card h3{font-size:17px;color:var(--navy);margin-bottom:7px}
+.step-card p{color:var(--muted);font-size:14.5px}
+.brands{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.brands span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 22px;font-weight:600;color:var(--navy);font-size:15px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.team-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;text-align:center}
+.team-card img{width:100%;height:250px;object-fit:cover}
+.team-card div{padding:18px}
+.team-card h4{color:var(--navy);font-size:17px}
+.team-card span{color:var(--muted);font-size:14px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gallery img{width:100%;height:210px;object-fit:cover;border-radius:12px;transition:.25s}
+.gallery img:hover{transform:scale(1.03)}
+.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tip-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.tip-card .tag{display:inline-block;background:#fdeee0;color:var(--orange-dark);font-weight:700;font-size:12.5px;text-transform:uppercase;letter-spacing:1px;border-radius:999px;padding:4px 12px;margin-bottom:12px}
+.tip-card h3{font-size:17.5px;color:var(--navy);margin-bottom:8px}
+.tip-card p{color:var(--muted);font-size:14.5px}
 .areas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 .areas span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 20px;font-weight:600;color:var(--navy);font-size:14.5px}
 .faq{max-width:780px;margin:0 auto}
@@ -84,7 +109,7 @@ section{padding:74px 0}
 .faq-q{width:100%;text-align:left;background:none;border:0;padding:18px 22px;font-size:16px;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
 .faq-a p{padding:0 22px 18px;color:var(--muted);font-size:15px}
-.faq-item.open .faq-a{max-height:240px}
+.faq-item.open .faq-a{max-height:260px}
 .faq-item .arrow{transition:transform .3s}
 .faq-item.open .arrow{transform:rotate(180deg)}
 .quote{background:linear-gradient(120deg,var(--navy-dark),var(--navy));color:#fff}
@@ -111,7 +136,8 @@ footer a:hover{color:#fff}
 .copyright{border-top:1px solid rgba(255,255,255,.13);padding-top:20px;text-align:center;font-size:13px;color:#8fa8bc}
 @media(max-width:900px){
   .hero-grid,.split,.quote-grid{grid-template-columns:1fr}
-  .services-grid{grid-template-columns:1fr 1fr}
+  .services-grid,.team-grid,.tips-grid{grid-template-columns:1fr 1fr}
+  .steps-grid,.gallery{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
   .hero h1{font-size:34px}
   .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:18px 20px;gap:14px;box-shadow:0 14px 24px rgba(15,42,67,.13);align-items:flex-start}
@@ -119,7 +145,7 @@ footer a:hover{color:#fff}
   .menu-btn{display:block}
   .nav-cta .btn{display:none}
 }
-@media(max-width:560px){.services-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
+@media(max-width:560px){.services-grid,.team-grid,.tips-grid,.steps-grid,.gallery{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -139,7 +165,8 @@ footer a:hover{color:#fff}
     </a>
     <nav class="nav-links" id="navLinks">
       <a href="#services">Services</a>
-      <a href="#about">About Us</a>
+      <a href="#process">How It Works</a>
+      <a href="#team">Our Team</a>
       <a href="#areas">Service Area</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
@@ -182,6 +209,7 @@ footer a:hover{color:#fff}
   </div>
 </div>
 
+<!-- SERVICES -->
 <section id="services">
   <div class="container">
     <div class="section-head">
@@ -191,40 +219,52 @@ footer a:hover{color:#fff}
     </div>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#d95f06" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a7 7 0 0 1 7 7c0 2.4-1.2 3.9-2.3 5.2-.9 1-1.7 2-1.7 3.8H9c0-1.8-.8-2.8-1.7-3.8C6.2 13.9 5 12.4 5 10a7 7 0 0 1 7-7Z"/><path d="M9 21h6"/></svg></div>
-        <h3>AC Repair</h3>
-        <p>Warm air, strange noises, short cycling or a system that won't start — we diagnose the real cause and fix it on the first visit whenever possible.</p>
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=900&auto=format&fit=crop" alt="Technician repairing an air conditioning system">
+        <div class="service-body"><h3>AC Repair</h3><p>Warm air, strange noises, short cycling or a system that won't start — we diagnose the real cause and fix it on the first visit whenever possible.</p></div>
       </div>
       <div class="service-card">
-        <div class="service-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#d95f06" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M7 21h10M12 17v4M7 9.5h10M7 13h6"/></svg></div>
-        <h3>AC Installation</h3>
-        <p>Right-sized, energy-efficient systems matched to your home and budget, with free in-home estimates and financing options available.</p>
+        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=900&auto=format&fit=crop" alt="New air conditioning system installation">
+        <div class="service-body"><h3>AC Installation</h3><p>Right-sized, energy-efficient systems matched to your home and budget, with free in-home estimates and financing options available.</p></div>
       </div>
       <div class="service-card">
-        <div class="service-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#d95f06" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1 3-2 4.2-2 6.2A2.2 2.2 0 0 0 12.2 11.4c1.5-.2 2-1.6 1.8-3.4 2 1.2 3.2 3 3.2 5.2A5.2 5.2 0 0 1 12 18.4a5.2 5.2 0 0 1-5.2-5.2C6.8 8.9 10.4 6.6 12 3Z"/><path d="M9.5 21h5"/></svg></div>
-        <h3>Heating &amp; Furnace</h3>
-        <p>Furnace repair, heat pump service and full heating system replacement — plus carbon-monoxide safety checks with every heating visit.</p>
+        <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=900&auto=format&fit=crop" alt="Furnace and heating system service">
+        <div class="service-body"><h3>Heating &amp; Furnace</h3><p>Furnace repair, heat pump service and full heating system replacement — plus carbon-monoxide safety checks with every heating visit.</p></div>
       </div>
       <div class="service-card">
-        <div class="service-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#d95f06" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/></svg></div>
-        <h3>Maintenance Plans</h3>
-        <p>Two precision tune-ups a year, priority scheduling and member discounts on repairs — the cheapest way to avoid a breakdown in peak season.</p>
+        <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=900&auto=format&fit=crop" alt="Technician performing HVAC maintenance checks">
+        <div class="service-body"><h3>Maintenance Plans</h3><p>Two precision tune-ups a year, priority scheduling and member discounts on repairs — the cheapest way to avoid a breakdown in peak season.</p></div>
       </div>
       <div class="service-card">
-        <div class="service-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#d95f06" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15c3-1 5 1 8 0s4-2.5 7-1M3 10c3-1 5 1 8 0s4-2.5 7-1M3 20c3-1 5 1 8 0s4-2.5 7-1"/></svg></div>
-        <h3>Indoor Air Quality</h3>
-        <p>Whole-home air purification, humidifiers, dehumidifiers and duct cleaning that help your family breathe easier all year round.</p>
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=900&auto=format&fit=crop" alt="Clean, comfortable home interior with purified air">
+        <div class="service-body"><h3>Indoor Air Quality</h3><p>Whole-home air purification, humidifiers, dehumidifiers and duct cleaning that help your family breathe easier all year round.</p></div>
       </div>
       <div class="service-card">
-        <div class="service-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#d95f06" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2Z"/></svg></div>
-        <h3>24/7 Emergency Service</h3>
-        <p>No AC in a Texas summer is an emergency. Our on-call team answers around the clock — with no overtime fees, ever.</p>
+        <img src="https://images.unsplash.com/photo-1615874694520-474822394e73?q=80&w=900&auto=format&fit=crop" alt="Emergency HVAC service at a customer home">
+        <div class="service-body"><h3>24/7 Emergency Service</h3><p>No AC in a Texas summer is an emergency. Our on-call team answers around the clock — with no overtime fees, ever.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="about" class="alt">
+<!-- PROCESS -->
+<section id="process" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">How It Works</div>
+      <h2>Fixed in Four Simple Steps</h2>
+      <p>From the first call to the final check — here is exactly what happens when you book with ComfortPro.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card"><div class="step-num">1</div><h3>Call or Book Online</h3><p>Tell us the problem and pick a time window that suits you. Emergencies jump the queue, 24/7.</p></div>
+      <div class="step-card"><div class="step-num">2</div><h3>Full Diagnosis</h3><p>Your technician inspects the whole system — not just the symptom — and explains what they find.</p></div>
+      <div class="step-card"><div class="step-num">3</div><h3>Approve the Price</h3><p>You get one written, flat-rate price before any work starts. No hourly meters, no surprises.</p></div>
+      <div class="step-card"><div class="step-num">4</div><h3>Fix &amp; Guarantee</h3><p>We complete the work, test everything twice, clean up fully — and back it with our written guarantee.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT + PLAN -->
+<section id="about">
   <div class="container split">
     <div>
       <div class="kicker" style="color:var(--orange-dark);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;font-size:13px;margin-bottom:8px">Why ComfortPro</div>
@@ -234,7 +274,7 @@ footer a:hover{color:#fff}
       <ul class="check-list">
         <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#d95f06" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Background-checked, uniformed local technicians</li>
         <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#d95f06" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Written flat-rate pricing before any work starts</li>
-        <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#d95f06" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> All major brands serviced — Carrier, Trane, Lennox, Goodman &amp; more</li>
+        <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#d95f06" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> All major brands serviced and repaired</li>
         <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#d95f06" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Shoe covers and full clean-up on every visit</li>
       </ul>
     </div>
@@ -252,7 +292,78 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<section id="areas">
+<!-- BRANDS -->
+<section class="alt" style="padding:52px 0">
+  <div class="container">
+    <div class="section-head" style="margin-bottom:26px">
+      <h2 style="font-size:24px">We Service All Major Brands</h2>
+    </div>
+    <div class="brands">
+      <span>Carrier</span><span>Trane</span><span>Lennox</span><span>Goodman</span><span>Rheem</span><span>York</span><span>American Standard</span><span>Bryant</span>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Our Team</div>
+      <h2>The Technicians at Your Door</h2>
+      <p>Uniformed, background-checked and factory-trained — you'll always know who is arriving, and when.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop" alt="Mike Torres, senior HVAC technician">
+        <div><h4>Mike Torres</h4><span>Senior Technician — Repairs</span></div>
+      </div>
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=800&auto=format&fit=crop" alt="James Reed, installation lead">
+        <div><h4>James Reed</h4><span>Installation Lead</span></div>
+      </div>
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=800&auto=format&fit=crop" alt="Chris Walker, maintenance specialist">
+        <div><h4>Chris Walker</h4><span>Maintenance Specialist</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Recent Work</div>
+      <h2>Homes We've Made Comfortable</h2>
+      <p>New installations and full system replacements across the metroplex — sized right, installed clean, and tested twice.</p>
+    </div>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" alt="Full system replacement in Dallas">
+      <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop" alt="New high-efficiency AC installation in Plano">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop" alt="Comfortable living room after duct and air quality work">
+      <img src="https://images.unsplash.com/photo-1560185009-5bf9f2849488?q=80&w=800&auto=format&fit=crop" alt="Heating system upgrade in Fort Worth">
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Homeowner Tips</div>
+      <h2>Keep Your System Running Longer</h2>
+      <p>Simple habits that lower your energy bills and prevent the most common breakdowns we see.</p>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card"><span class="tag">Every Month</span><h3>Change Your Filter</h3><p>A clogged filter is the #1 cause of weak airflow and frozen coils. Check it monthly and replace it every 1–3 months — more often if you have pets.</p></div>
+      <div class="tip-card"><span class="tag">Summer</span><h3>Set It and Save</h3><p>Set your thermostat to 78°F when you're home and a few degrees higher when you're away. A smart thermostat can cut cooling costs without sacrificing comfort.</p></div>
+      <div class="tip-card"><span class="tag">Winter</span><h3>Book a Heating Check</h3><p>Have your furnace inspected before the first cold snap. A tune-up catches worn parts early and includes a carbon-monoxide safety check for your family.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section id="areas" class="alt">
   <div class="container">
     <div class="section-head">
       <div class="kicker">Service Area</div>
@@ -265,7 +376,8 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<section id="faq" class="alt">
+<!-- FAQ -->
+<section id="faq">
   <div class="container">
     <div class="section-head">
       <div class="kicker">FAQ</div>
@@ -285,6 +397,10 @@ footer a:hover{color:#fff}
         <div class="faq-a"><p>A good rule: if your system is over 12 years old and the repair costs more than a third of a new system, replacement usually pays for itself in lower energy bills. We will show you both options with honest numbers — the decision is always yours.</p></div>
       </div>
       <div class="faq-item">
+        <button class="faq-q">Why is my AC running but not cooling?<span class="arrow">▾</span></button>
+        <div class="faq-a"><p>The most common causes are a dirty filter, low refrigerant, a failing capacitor or a frozen coil. Check your filter first — if that doesn't fix it, switch the system off and call us before a small fault becomes a big one.</p></div>
+      </div>
+      <div class="faq-item">
         <button class="faq-q">Which brands do you service?<span class="arrow">▾</span></button>
         <div class="faq-a"><p>All major brands, including Carrier, Trane, Lennox, Goodman, Rheem, York and American Standard — for both repairs and warranty work where applicable.</p></div>
       </div>
@@ -292,10 +408,15 @@ footer a:hover{color:#fff}
         <button class="faq-q">Do you offer financing?<span class="arrow">▾</span></button>
         <div class="faq-a"><p>Yes — flexible financing options are available on new systems and larger repairs, subject to approval. Ask our team when you book and we will walk you through the options.</p></div>
       </div>
+      <div class="faq-item">
+        <button class="faq-q">What does a maintenance visit include?<span class="arrow">▾</span></button>
+        <div class="faq-a"><p>A full multi-point inspection and tune-up: coil cleaning, refrigerant and electrical checks, thermostat calibration, drain line flush, filter check and a written health report for your system.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- QUOTE -->
 <section id="quote" class="quote">
   <div class="container quote-grid">
     <div>
@@ -337,9 +458,9 @@ footer a:hover{color:#fff}
         <h4>Quick Links</h4>
         <ul>
           <li><a href="#services">Our Services</a></li>
-          <li><a href="#about">Why ComfortPro</a></li>
+          <li><a href="#process">How It Works</a></li>
+          <li><a href="#team">Our Team</a></li>
           <li><a href="#areas">Service Area</a></li>
-          <li><a href="#faq">FAQ</a></li>
           <li><a href="#quote">Get a Free Quote</a></li>
         </ul>
       </div>

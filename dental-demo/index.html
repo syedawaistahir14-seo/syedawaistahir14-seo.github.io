@@ -9,13 +9,13 @@
 :root{
   --teal:#0e7c86; --teal-dark:#0a5d64; --navy:#10333d; --ink:#1c2b30; --muted:#5b6f75;
   --bg:#f4f9fa; --card:#ffffff; --line:#dcebee; --radius:14px;
-  --shadow:0 10px 30px rgba(16,51,61,.08);
+  --shadow:0 10px 30px rgba(16,51,61,.10);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;color:var(--ink);line-height:1.6;background:#fff}
 a{text-decoration:none;color:inherit}
-img,svg{display:block}
+img{display:block;max-width:100%}
 .container{max-width:1140px;margin:0 auto;padding:0 20px}
 .btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:600;font-size:15px;transition:.2s;border:2px solid transparent;cursor:pointer}
 .btn-primary{background:var(--teal);color:#fff}
@@ -24,25 +24,25 @@ img,svg{display:block}
 .btn-outline:hover{background:#fff;color:var(--navy)}
 .btn-white{background:#fff;color:var(--teal-dark)}
 .btn-white:hover{background:var(--bg)}
-/* Top bar */
 .topbar{background:var(--navy);color:#dcebee;font-size:13.5px}
 .topbar .container{display:flex;justify-content:space-between;align-items:center;padding-top:8px;padding-bottom:8px;flex-wrap:wrap;gap:6px}
 .topbar a{color:#fff;font-weight:600}
-/* Header */
 header{position:sticky;top:0;background:#fff;z-index:50;transition:box-shadow .2s}
 header.scrolled{box-shadow:0 4px 18px rgba(16,51,61,.12)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
 .logo{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:800;color:var(--navy)}
 .logo span{color:var(--teal)}
-.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links{display:flex;gap:26px;align-items:center}
 .nav-links a{font-weight:600;font-size:15px;color:var(--ink)}
 .nav-links a:hover{color:var(--teal)}
 .nav-cta{display:flex;gap:12px;align-items:center}
 .menu-btn{display:none;background:none;border:0;cursor:pointer;padding:6px}
-/* Hero */
-.hero{background:linear-gradient(120deg,var(--navy) 0%,var(--teal-dark) 60%,var(--teal) 100%);color:#fff;padding:84px 0 76px}
+/* Hero with photo */
+.hero{position:relative;color:#fff;padding:96px 0 88px;background:url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(13,43,52,.93) 30%,rgba(10,93,100,.78) 65%,rgba(14,124,134,.45))}
+.hero .container{position:relative}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
-.hero h1{font-size:44px;line-height:1.15;margin-bottom:18px}
+.hero h1{font-size:45px;line-height:1.15;margin-bottom:18px}
 .hero h1 em{font-style:normal;color:#8fe3ea}
 .hero p{font-size:18px;color:#e4f3f5;max-width:520px;margin-bottom:28px}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
@@ -55,47 +55,67 @@ header.scrolled{box-shadow:0 4px 18px rgba(16,51,61,.12)}
 .hero-card li{padding:9px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}
 .hero-card li:last-child{border-bottom:0}
 .hero-card li b{color:var(--teal-dark)}
-/* Sections */
+/* Offer strip */
+.offer{background:#fdf3e3;border-bottom:1px solid #f0dfbc}
+.offer .container{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+.offer b{color:#8a5a00}
+.offer span{color:#6b5410;font-size:15px}
+.offer a{font-weight:700;color:var(--teal-dark)}
 section{padding:74px 0}
-.section-head{text-align:center;max-width:640px;margin:0 auto 44px}
+.section-head{text-align:center;max-width:660px;margin:0 auto 44px}
 .section-head .kicker{color:var(--teal);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;font-size:13px;margin-bottom:8px}
 .section-head h2{font-size:33px;color:var(--navy);margin-bottom:10px}
 .section-head p{color:var(--muted)}
 .alt{background:var(--bg)}
-/* Services */
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.service-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:.2s}
-.service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--teal)}
-.service-icon{width:54px;height:54px;border-radius:14px;background:#e3f3f5;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.service-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.2s}
+.service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.service-card img{width:100%;height:170px;object-fit:cover}
+.service-body{padding:24px 26px 28px}
 .service-card h3{font-size:18.5px;color:var(--navy);margin-bottom:8px}
 .service-card p{color:var(--muted);font-size:15px}
-/* About / why */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
 .split h2{font-size:31px;color:var(--navy);margin-bottom:14px}
 .split p{color:var(--muted);margin-bottom:14px}
 .check-list{list-style:none;margin-top:8px}
 .check-list li{display:flex;gap:12px;padding:8px 0;font-size:15.5px;align-items:flex-start}
 .check-list svg{flex:none;margin-top:3px}
-.about-panel{background:linear-gradient(150deg,var(--teal) 0%,var(--teal-dark) 100%);border-radius:var(--radius);color:#fff;padding:36px}
-.about-panel h3{font-size:22px;margin-bottom:14px}
-.about-panel p{color:#dff3f5;margin-bottom:20px}
-.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.about-stats div{background:rgba(255,255,255,.12);border-radius:10px;padding:16px}
-.about-stats b{display:block;font-size:17px;margin-bottom:2px}
-.about-stats span{font-size:13.5px;color:#cfeef1}
-/* Insurance */
+.photo-frame{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.photo-frame img{width:100%;height:100%;object-fit:cover;min-height:340px}
+/* Doctor + team */
+.doctor-card{display:grid;grid-template-columns:.85fr 1.15fr;gap:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.doctor-card img{width:100%;height:100%;object-fit:cover;min-height:380px}
+.doctor-body{padding:38px}
+.doctor-body .kicker{color:var(--teal);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;font-size:12.5px;margin-bottom:6px}
+.doctor-body h3{font-size:26px;color:var(--navy);margin-bottom:4px}
+.doctor-body .role{color:var(--teal-dark);font-weight:600;margin-bottom:14px}
+.doctor-body p{color:var(--muted);margin-bottom:12px;font-size:15.5px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:26px}
+.team-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;text-align:center}
+.team-card img{width:100%;height:250px;object-fit:cover}
+.team-card div{padding:18px}
+.team-card h4{color:var(--navy);font-size:17px}
+.team-card span{color:var(--muted);font-size:14px}
+/* Steps */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.step-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;text-align:center}
+.step-num{width:46px;height:46px;border-radius:50%;background:var(--teal);color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+.step-card h3{font-size:17px;color:var(--navy);margin-bottom:7px}
+.step-card p{color:var(--muted);font-size:14.5px}
+/* Gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gallery img{width:100%;height:210px;object-fit:cover;border-radius:12px;transition:.25s}
+.gallery img:hover{transform:scale(1.03)}
 .insurance{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
 .insurance span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 22px;font-weight:600;color:var(--navy);font-size:15px}
-/* FAQ */
 .faq{max-width:780px;margin:0 auto}
 .faq-item{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden}
 .faq-q{width:100%;text-align:left;background:none;border:0;padding:18px 22px;font-size:16px;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
 .faq-a p{padding:0 22px 18px;color:var(--muted);font-size:15px}
-.faq-item.open .faq-a{max-height:220px}
+.faq-item.open .faq-a{max-height:240px}
 .faq-item .arrow{transition:transform .3s}
 .faq-item.open .arrow{transform:rotate(180deg)}
-/* Appointment */
 .appt{background:linear-gradient(120deg,var(--navy),var(--teal-dark));color:#fff}
 .appt-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
 .appt h2{font-size:31px;margin-bottom:14px}
@@ -109,7 +129,6 @@ form h3{color:var(--navy);margin-bottom:16px;font-size:20px}
 .field textarea{resize:vertical;min-height:74px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .form-success{display:none;background:#e7f7ee;border:1px solid #a9dfc0;color:#146c39;border-radius:9px;padding:13px 16px;font-size:14.5px;margin-top:14px}
-/* Footer */
 footer{background:var(--navy);color:#c6dde1;padding:56px 0 26px;font-size:14.5px}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px;margin-bottom:36px}
 footer h4{color:#fff;font-size:16px;margin-bottom:14px}
@@ -120,16 +139,18 @@ footer a:hover{color:#fff}
 .footer-logo span{color:#8fe3ea}
 .copyright{border-top:1px solid rgba(255,255,255,.14);padding-top:20px;text-align:center;font-size:13px;color:#9db8bd}
 @media(max-width:900px){
-  .hero-grid,.split,.appt-grid{grid-template-columns:1fr}
-  .services-grid{grid-template-columns:1fr 1fr}
+  .hero-grid,.split,.appt-grid,.doctor-card{grid-template-columns:1fr}
+  .services-grid,.team-grid{grid-template-columns:1fr 1fr}
+  .steps-grid,.gallery{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
   .hero h1{font-size:34px}
+  .doctor-card img{min-height:280px}
   .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:18px 20px;gap:14px;box-shadow:0 14px 24px rgba(16,51,61,.12);align-items:flex-start}
   .nav-links.open{display:flex}
   .menu-btn{display:block}
   .nav-cta .btn{display:none}
 }
-@media(max-width:560px){.services-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
+@media(max-width:560px){.services-grid,.team-grid,.steps-grid,.gallery{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -149,6 +170,7 @@ footer a:hover{color:#fff}
     </a>
     <nav class="nav-links" id="navLinks">
       <a href="#services">Services</a>
+      <a href="#doctor">Meet the Doctor</a>
       <a href="#about">About Us</a>
       <a href="#insurance">Insurance</a>
       <a href="#faq">FAQ</a>
@@ -164,7 +186,6 @@ footer a:hover{color:#fff}
 </header>
 
 <main id="top">
-<!-- HERO -->
 <div class="hero">
   <div class="container hero-grid">
     <div>
@@ -193,6 +214,13 @@ footer a:hover{color:#fff}
   </div>
 </div>
 
+<div class="offer">
+  <div class="container">
+    <span><b>New Patient Special:</b> complete exam, digital X-rays &amp; cleaning for <b>$99</b> — limited slots each week.</span>
+    <a href="#appointment">Claim this offer →</a>
+  </div>
+</div>
+
 <!-- SERVICES -->
 <section id="services">
   <div class="container">
@@ -203,47 +231,80 @@ footer a:hover{color:#fff}
     </div>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#0e7c86" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
-        <h3>General Dentistry</h3>
-        <p>Exams, digital X-rays, professional cleanings and tooth-coloured fillings that keep your natural teeth healthy for life.</p>
+        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=900&auto=format&fit=crop" alt="Dentist performing a gentle dental examination">
+        <div class="service-body"><h3>General Dentistry</h3><p>Exams, digital X-rays, professional cleanings and tooth-coloured fillings that keep your natural teeth healthy for life.</p></div>
       </div>
       <div class="service-card">
-        <div class="service-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#0e7c86" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.2"/></svg></div>
-        <h3>Cosmetic Dentistry</h3>
-        <p>Professional teeth whitening, porcelain veneers and complete smile makeovers designed around your face and your goals.</p>
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=900&auto=format&fit=crop" alt="Cosmetic dentistry treatment at BrightCare Dental">
+        <div class="service-body"><h3>Cosmetic Dentistry</h3><p>Professional teeth whitening, porcelain veneers and complete smile makeovers designed around your face and your goals.</p></div>
       </div>
       <div class="service-card">
-        <div class="service-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#0e7c86" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M8 8h8l-1 6h-6L8 8Z"/><path d="M10 14v4M14 14v4M9 21h6"/></svg></div>
-        <h3>Dental Implants</h3>
-        <p>Permanent, natural-looking replacements for missing teeth — from a single implant to full-arch restoration.</p>
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=900&auto=format&fit=crop" alt="Modern BrightCare Dental treatment room">
+        <div class="service-body"><h3>Dental Implants</h3><p>Permanent, natural-looking replacements for missing teeth — from a single implant to full-arch restoration.</p></div>
       </div>
       <div class="service-card">
-        <div class="service-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#0e7c86" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15c2-1.5 4-1.5 6 0s4 1.5 6 0 3-1.2 4-.5"/><path d="M4 10c2-1.5 4-1.5 6 0s4 1.5 6 0 3-1.2 4-.5"/></svg></div>
-        <h3>Clear Aligners</h3>
-        <p>Straighten your teeth discreetly with removable clear aligners — no brackets, no wires, and fewer office visits.</p>
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=900&auto=format&fit=crop" alt="Patient smiling after clear aligner treatment">
+        <div class="service-body"><h3>Clear Aligners</h3><p>Straighten your teeth discreetly with removable clear aligners — no brackets, no wires, and fewer office visits.</p></div>
       </div>
       <div class="service-card">
-        <div class="service-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#0e7c86" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-9.5-9C1 8.5 3 5 6.5 5c2 0 3.4 1.1 5.5 3.4C14.1 6.1 15.5 5 17.5 5 21 5 23 8.5 21.5 12c-2 4.4-9.5 9-9.5 9Z" transform="scale(.92) translate(1 1)"/></svg></div>
-        <h3>Children's Dentistry</h3>
-        <p>Friendly, patient-first care for kids — gentle cleanings, fluoride, sealants and habit coaching in a calm setting.</p>
+        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=900&auto=format&fit=crop" alt="Friendly children's dentist at BrightCare Dental">
+        <div class="service-body"><h3>Children's Dentistry</h3><p>Friendly, patient-first care for kids — gentle cleanings, fluoride, sealants and habit coaching in a calm setting.</p></div>
       </div>
       <div class="service-card">
-        <div class="service-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#0e7c86" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2Z"/></svg></div>
-        <h3>Emergency Dentistry</h3>
-        <p>Toothache, a broken tooth or a lost crown? We keep same-day emergency slots open every working day — call us first.</p>
+        <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=900&auto=format&fit=crop" alt="Emergency dental care" onerror="this.src='https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=900&auto=format&fit=crop'">
+        <div class="service-body"><h3>Emergency Dentistry</h3><p>Toothache, a broken tooth or a lost crown? We keep same-day emergency slots open every working day — call us first.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCTOR -->
+<section id="doctor" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Meet the Doctor</div>
+      <h2>The Team Behind Your Smile</h2>
+    </div>
+    <div class="doctor-card">
+      <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1000&auto=format&fit=crop" alt="Dr. Emily Carter, lead dentist at BrightCare Dental">
+      <div class="doctor-body">
+        <div class="kicker">Lead Dentist &amp; Founder</div>
+        <h3>Dr. Emily Carter, DDS</h3>
+        <div class="role">Family &amp; Cosmetic Dentistry</div>
+        <p>Dr. Carter founded BrightCare Dental with one simple idea: dentistry should never hurt — not your teeth, and not your wallet. She is known for her calm, gentle approach and for explaining every option in plain language before any treatment begins.</p>
+        <p>Her special interests include cosmetic smile design, clear aligner therapy and helping anxious patients feel at ease in the chair. Outside the clinic, she volunteers at Austin community health days and enjoys hiking the Greenbelt with her family.</p>
+        <ul class="check-list">
+          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#0e7c86" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Doctor of Dental Surgery (DDS)</li>
+          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#0e7c86" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Certified clear aligner provider</li>
+          <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#0e7c86" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Member, American Dental Association</li>
+        </ul>
+      </div>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=800&auto=format&fit=crop" alt="Dr. James Lee, implant dentist">
+        <div><h4>Dr. James Lee, DDS</h4><span>Implants &amp; Restorative Dentistry</span></div>
+      </div>
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop" alt="Maria Gonzalez, dental hygienist">
+        <div><h4>Maria Gonzalez, RDH</h4><span>Lead Dental Hygienist</span></div>
+      </div>
+      <div class="team-card">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" alt="David Kim, patient care coordinator">
+        <div><h4>David Kim</h4><span>Patient Care Coordinator</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="alt">
+<section id="about">
   <div class="container split">
     <div>
       <div class="kicker" style="color:var(--teal);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;font-size:13px;margin-bottom:8px">About BrightCare Dental</div>
       <h2>A Neighbourhood Practice That Treats You Like Family</h2>
       <p>BrightCare Dental is an independently owned family practice in the heart of Austin. We believe good dentistry starts with listening — we take time to explain every option, agree the plan together, and never recommend treatment you don't need.</p>
-      <p>Our clinic uses digital X-rays (lower radiation), intraoral cameras so you can see what we see, and gentle techniques that make even nervous patients comfortable.</p>
+      <p>Our clinic uses digital X-rays (up to 90% less radiation), intraoral cameras so you can see exactly what we see, and 3D imaging for precise implant planning.</p>
       <ul class="check-list">
         <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#0e7c86" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Transparent prices agreed before treatment starts</li>
         <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#0e7c86" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Evening and Saturday appointments for busy families</li>
@@ -251,26 +312,53 @@ footer a:hover{color:#fff}
         <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#0e7c86" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Strict sterilisation and safety protocols, every patient, every time</li>
       </ul>
     </div>
-    <div class="about-panel">
-      <h3>Your First Visit</h3>
-      <p>New patients receive a complete oral exam, digital X-rays, a professional cleaning and a personal treatment plan — with plenty of time for questions.</p>
-      <div class="about-stats">
-        <div><b>Complete Exam</b><span>Teeth, gums, bite &amp; jaw health check</span></div>
-        <div><b>Digital X-Rays</b><span>Up to 90% less radiation</span></div>
-        <div><b>Cleaning &amp; Polish</b><span>Gentle hygiene appointment</b></span></div>
-        <div><b>Personal Plan</b><span>Options and prices in writing</span></div>
-      </div>
+    <div class="photo-frame">
+      <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1200&auto=format&fit=crop" alt="Inside the BrightCare Dental clinic in Austin">
+    </div>
+  </div>
+</section>
+
+<!-- VISIT STEPS -->
+<section class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Your First Visit</div>
+      <h2>What to Expect, Step by Step</h2>
+      <p>No surprises — here is exactly how your first appointment with us works.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card"><div class="step-num">1</div><h3>Book in Minutes</h3><p>Call us or send the form below. We confirm your slot and send a short health form to complete at home.</p></div>
+      <div class="step-card"><div class="step-num">2</div><h3>Complete Exam</h3><p>A full check of teeth, gums, bite and jaw, plus low-radiation digital X-rays and an oral cancer screening.</p></div>
+      <div class="step-card"><div class="step-num">3</div><h3>Honest Plan</h3><p>We show you photos of your own teeth, explain every option, and agree prices in writing — no pressure.</p></div>
+      <div class="step-card"><div class="step-num">4</div><h3>Gentle Treatment</h3><p>Treatment at your pace, with comfort breaks whenever you need them, and a clear aftercare plan.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Inside Our Clinic</div>
+      <h2>A Calm, Modern Space</h2>
+      <p>Bright treatment rooms, the latest equipment, and a team that genuinely enjoys what they do.</p>
+    </div>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop" alt="BrightCare Dental treatment room">
+      <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop" alt="Dentist treating a patient">
+      <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop" alt="Dental care in progress">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" alt="BrightCare Dental reception area">
     </div>
   </div>
 </section>
 
 <!-- INSURANCE -->
-<section id="insurance">
+<section id="insurance" class="alt">
   <div class="container">
     <div class="section-head">
       <div class="kicker">Insurance &amp; Payment</div>
       <h2>We Accept Most PPO Dental Plans</h2>
-      <p>We verify your coverage before treatment so there are no surprises. No insurance? Ask about our in-house membership plan and payment options.</p>
+      <p>We verify your coverage before treatment so there are no surprises. No insurance? Ask about our in-house membership plan — cleanings, exams and X-rays included, plus savings on treatment.</p>
     </div>
     <div class="insurance">
       <span>Delta Dental</span><span>Cigna</span><span>Aetna</span><span>MetLife</span><span>Guardian</span><span>Humana</span><span>UnitedHealthcare</span><span>BlueCross BlueShield</span>
@@ -279,7 +367,7 @@ footer a:hover{color:#fff}
 </section>
 
 <!-- FAQ -->
-<section id="faq" class="alt">
+<section id="faq">
   <div class="container">
     <div class="section-head">
       <div class="kicker">FAQ</div>
@@ -288,7 +376,7 @@ footer a:hover{color:#fff}
     <div class="faq">
       <div class="faq-item">
         <button class="faq-q">Are you accepting new patients?<span class="arrow">▾</span></button>
-        <div class="faq-a"><p>Yes — new patients are always welcome. Call (555) 014-2288 or send the appointment request form below and we will confirm your visit within one working day.</p></div>
+        <div class="faq-a"><p>Yes — new patients are always welcome, and our $99 new patient special includes a complete exam, digital X-rays and a professional cleaning. Call (555) 014-2288 or send the form below and we will confirm your visit within one working day.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">What should I do in a dental emergency?<span class="arrow">▾</span></button>
@@ -301,6 +389,14 @@ footer a:hover{color:#fff}
       <div class="faq-item">
         <button class="faq-q">How often should I visit the dentist?<span class="arrow">▾</span></button>
         <div class="faq-a"><p>For most patients, every six months for an exam and professional cleaning. Patients with gum disease or ongoing treatment may need shorter intervals — we will advise you honestly at your visit.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">I'm nervous about dental visits. Can you help?<span class="arrow">▾</span></button>
+        <div class="faq-a"><p>Absolutely — dental anxiety is very common and nothing to be embarrassed about. We work at your pace, explain everything before we do it, agree a stop signal, and offer comfort options for longer treatments.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How long does teeth whitening take?<span class="arrow">▾</span></button>
+        <div class="faq-a"><p>In-office whitening takes about one hour and brightens most smiles several shades in a single visit. We also offer custom take-home kits for gradual whitening and top-ups.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Where are you located and is there parking?<span class="arrow">▾</span></button>
@@ -341,7 +437,6 @@ footer a:hover{color:#fff}
 </section>
 </main>
 
-<!-- FOOTER -->
 <footer id="contact">
   <div class="container">
     <div class="footer-grid">
@@ -353,9 +448,9 @@ footer a:hover{color:#fff}
         <h4>Quick Links</h4>
         <ul>
           <li><a href="#services">Our Services</a></li>
+          <li><a href="#doctor">Meet the Doctor</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#insurance">Insurance</a></li>
-          <li><a href="#faq">FAQ</a></li>
           <li><a href="#appointment">Book Appointment</a></li>
         </ul>
       </div>
